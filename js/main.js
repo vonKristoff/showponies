@@ -37,3 +37,12 @@ if(gallery.length > 0) {
 		el.style.backgroundImage = `url(${src})`
 	})
 }
+
+const about = document.querySelector('.has-circle')
+if(about !== null) {
+	const target = document.querySelector('.circle')
+	const dimension = about.getBoundingClientRect()
+	const diameter = Math.sqrt((dimension.width * dimension.width) + (dimension.height * dimension.height))
+	target.style.width = `${diameter}px`
+	target.style.height = `${diameter}px`
+}

@@ -45,5 +45,14 @@
 		});
 	}
 
+	var about = document.querySelector('.has-circle');
+	if(about !== null) {
+		var target = document.querySelector('.circle');
+		var dimension = about.getBoundingClientRect();
+		var diameter = Math.sqrt((dimension.width * dimension.width) + (dimension.height * dimension.height));
+		target.style.width = diameter + "px";
+		target.style.height = diameter + "px";
+	}
+
 }());
 //# sourceMappingURL=bundle.js.map
