@@ -43,7 +43,7 @@
     "build:css": "stylus --compress -u nib stylus/style.styl -o stylus/style.css",
     "postbuild:css": "purifycss stylus/style.css public/*.html --info --out public/style.css",
     "compile:templates": "pug pug/components -o js/templates/",
-    "compile:pages": "pug pug/views -o public/"
+    "compile:pages": "pug pug/views -H -o public/"
   },
   "dependencies": {
     "fg-loadcss": "latest",
