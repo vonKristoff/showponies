@@ -1,0 +1,28 @@
+.element-carosel
+  margin 0 auto
+  padding 2em
+  max-width 1024px
+  width 100%
+  +mobile()
+    .el-body
+      h1        
+        font-size 1.5em
+  .el-body
+    padding 0 1em
+    overflow hidden
+    min-height 400px
+    h1
+      font-family 'Lora'
+  .quotes-collection
+    position relative    
+  .child-foot
+    h4, h3      
+      margin 0
+  .quote-child
+    transition all .4s ease-out
+    position absolute
+    transform translateX(100%)
+    opacity 0
+    &.is-active
+      transform translateX(0)
+      opacity 1  

@@ -1,0 +1,15 @@
+mixin youtube(src)
+  iframe(width="560" height="315" src= src frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+.card-component
+  a.ui--underline.is-link(href="https://www.bustle.com/p/dumbo-cast-real-circus-performers-from-all-over-the-world-to-create-its-whimsical-setting-16824217" target="_blank").el-head
+        h4 ‘Dumbo’ Cast Real Circus Performers From All Over The World To Create Its Whimsical Setting
+  .layout--flex
+    .box
+      .el-img
+        img(src="/images/dumbo-press.jpg")
+        .caption
+          span Walt Disney Pictures
+    .box.has-video
+      .el-video
+        +youtube("https://www.youtube.com/embed/r_UC-IkEMgg?controls=0")
+

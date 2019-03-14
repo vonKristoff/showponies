@@ -1,0 +1,47 @@
+.press-cards
+  font-family 'Lora'
+  max-width 1024px
+  width 100%
+  margin 0 auto
+  
+.card-component
+  margin-bottom 4em
+  .el-head
+    text-decoration underline
+    a, a:visted
+      color #222
+    h4
+      margin 0 8em
+      margin-bottom 1em
+      font-family 'Lora'
+      text-align center
+  .layout--flex
+    display flex
+    +tablet()
+      flex-direction column
+    .box
+      width 50%
+      &:first-child
+        margin-right .5em
+      &:last-child
+        margin-left .5em
+      &.has-video
+        display flex
+        flex-direction column
+        justify-content flex-end
+        margin-bottom 1em
+      +tablet()
+        width calc(100% - 4em)
+        &:first-child, &:last-child
+          margin 2em
+    .el-img
+      img
+        width 100%
+      .caption
+        font-size .85em
+        text-align right
+    .el-video     
+      width 100%
+      iframe
+        width 100%
+      

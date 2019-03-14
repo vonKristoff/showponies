@@ -1,0 +1,25 @@
+.gallery-collection
+  display flex
+  flex-wrap wrap
+  .gallery-figure
+    width calc(33.333% - 1.333em)
+    position relative
+    padding-top calc((414 / 752) * 100vw)
+    margin 0 1em
+    +mobile()
+      padding-top calc((752 / 414) * 100vw)
+      width 100%
+      &:nth-child(3n+2)
+        margin 0 1em !important
+    .img-background      
+      position absolute
+      top 0
+      left 0      
+      width 100%
+      height calc(100% - 1em)
+      background-size cover
+      background-position center
+      background-repeat no-repeat
+    &:nth-child(3n+2)
+      margin 0
+      

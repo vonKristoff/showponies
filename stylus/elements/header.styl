@@ -1,3 +1,41 @@
 /**
  * HEADER
  */
+a.is-nav-item
+ color gold
+ margin 0 2em
+ 
+header
+	color gold
+	width 100%
+	position fixed
+	top 0
+	left 0
+	background-color white
+	z-index 1
+	
+[class^="nav-"]
+	padding 2em
+	width 100%
+	
+navigation
+	display flex
+	flex-direction row
+	justify-content space-between
+	+tablet()
+		flex-direction column
+		.nav-headline, .nav-page-links
+			width 100%
+	.nav-headline
+		display none
+
+
+.nav-headline
+	span
+		margin-left 2em	
+		display none
+.nav-page-links	
+	display flex
+	flex-direction row
+	justify-content center
+	align-items center

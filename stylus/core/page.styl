@@ -1,6 +1,101 @@
-body
-  margin 0 auto
-  maxWidth(_wBody)
+body, header, footer
+  font-family 'Roboto'
+  
 
 section
-  margin-top 4em
+  width 100%
+
+section
+  &.type--hero
+    height calc(100vh - 7em)
+    margin-top 5em
+    margin-bottom 2em
+  &.type--main
+    article
+      margin 0 auto
+      max-width 640px
+      width 100%
+  &.type--about
+      margin-top 7em
+      min-height calc(100vh - 7em)
+  &.type--logo
+    height calc(50vh - 7em)
+    margin-top 6em
+    margin-bottom 3em
+  
+.type--hero, .type--logo
+  background-image url("https://static.wixstatic.com/media/ae58d1_45e17f063bfb48e59e69b4526aeef152~mv2.png/v1/fill/w_1255,h_754,al_c,q_85/Showponies_full%20logo_HI-RES%20copy%202.webp")
+  background-size contain
+  background-position center center
+  background-repeat no-repeat
+  
+.type--main
+  article    
+    padding 2em 0
+    font-size 1.25em
+    p
+      color grey
+    +mobile()
+      padding 2em 3em
+      
+.type--about
+  display flex
+  align-items center
+  justify-content center
+  background-image url("https://static.wixstatic.com/media/ae58d1_3f3853676daf4a799bfb92de7f36eaef~mv2_d_1400_1400_s_2.png/v1/fill/w_1400,h_1400,al_c,q_85/ae58d1_3f3853676daf4a799bfb92de7f36eaef~mv2_d_1400_1400_s_2.webp")
+  background-size contain
+  background-position center
+  article
+    margin 0 auto
+    max-width calc(640px + 4em)
+    width 100%
+    padding 4em
+    background-color rgba(255,255,255,.85)
+    .head
+      text-align center
+      h1
+        font-size 1.65em   
+        margin-bottom .5em
+      .subheading 
+        background-color gold
+        font-size 1.125em
+        padding .25em 1em
+        border-radius 1em
+        color white
+        display inline-flex
+    .body
+      margin-top 2em
+
+.type--press
+  font-family 'Lora'
+  .head  
+    display flex
+    justify-content center
+    align-items center
+    .fa--awards
+      font-size 3em
+      color gold
+      margin-right .5em
+    h1
+      margin-bottom 0
+  .body
+    margin-top 2em
+
+.page-split
+  font-size 3em
+  position relative
+  display flex
+  justify-content center
+  align-items center
+  span
+    padding 0 1em
+    background-color white
+  &:after
+    content ''
+    position absolute
+    width 100%
+    z-index -1
+    left 0
+    bottom 50%
+    background-color #efefef
+    height .125em    
