@@ -19,7 +19,7 @@ const carousel = {
 		let l = t.length
 		let next = x + 1 < l ? x + 1 : 0
 		let prev = x - 1 < 0 ? l - 1 : x - 1
-		console.log(prev, x, next)
+
 		if(t[prev].classList.contains("is-active")) t[prev].classList.toggle("is-active")
 		setTimeout(() => el.classList.toggle("is-active"), 300)
 		this.state.current = next
