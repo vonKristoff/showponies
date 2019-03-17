@@ -1,9 +1,11 @@
-header
-  navigation
-    .nav-headline
-      span ACT NOW! 📞 0207 674 8822
-    .nav-page-links
-      a(href="/" target="_self").ui--underline.is-nav-item Home
-      a(href="/press" target="_self").ui--underline.is-nav-item Press
-      a(href="/about" target="_self").ui--underline.is-nav-item About
-      a(href="/gallery" target="_self").ui--underline.is-nav-item Gallery
+- var collection = [{ path: "/", active: false, label: "Home" }, { path: "/press", active: false, label: "Press" },{ path: "/about", active: false, label: "About" },{ path: "/gallery", active: false, label: "Gallery" }]
+mixin header(page)
+  - var pages = collection.map(item => { if(item.label === page) item.active = true })
+  header
+    navigation
+      .nav-headline
+        span ACT NOW! 📞 0207 674 8822
+      .nav-page-links
+        for item in collection
+          item.label
+          a.ui--underline.is-nav-item(href= item.path target="_self" class= item.active && 'is-active')= item.label
