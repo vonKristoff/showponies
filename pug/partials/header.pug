@@ -8,4 +8,4 @@ mixin header(page)
       .nav-page-links
         for item in collection
           item.label
-          a.ui--underline.is-nav-item(href= item.path target="_self" class= item.active && 'is-active')= item.label
+          a.ui--underline.is-nav-item(href= item.path target="_self" title=item.label class= item.active && 'is-active')= item.label
