@@ -1,4 +1,3 @@
-- var BASE_URL = "https://www.showponies.co.uk"
 - var collection = [{ path: "/", active: false, label: "Home" }, { path: "/press", active: false, label: "Press" },{ path: "/about", active: false, label: "About" },{ path: "/gallery", active: false, label: "Gallery" }]
 mixin header(page)
   - var pages = collection.map(item => { if(item.label === page) item.active = true })
@@ -9,4 +8,4 @@ mixin header(page)
       .nav-page-links
         for item in collection
           item.label
-          a.ui--underline.is-nav-item(rel="canonical" href= `${BASE_URL}${item.path}` target="_self" title=item.label class= item.active && 'is-active')= item.label
+          a.ui--underline.is-nav-item(rel= item.label.toLowerCase() href= item.path target="_self" title=item.label class= item.active && 'is-active')= item.label

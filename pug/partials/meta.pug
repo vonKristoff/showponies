@@ -1,9 +1,12 @@
-mixin meta(title)
+- var BASE_URL = "https://www.show-ponies.co.uk"
+mixin meta(page, title, url)
   title= title
   meta(charset="utf-8")
   meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=0")
   meta(name="description" content="We provide speciality acts for amazing events, and are uniquely equipped to find just the right entertainment you are after. No matter how big or small, Showponies offer a seamless, end to end service.")
   meta(name="keywords" content="Circus for launches, Corporate Entertainment, Speciality Acts, TV and Film Artists")
+  link(rel= page href= `${BASE_URL}${url}`)
+  link(rel="canonical" href= `${BASE_URL}${url}`)
   link(href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet")
   link(href="//fonts.googleapis.com/css?family=Lora" rel="stylesheet")
   link(href="/style.css" rel="stylesheet")
