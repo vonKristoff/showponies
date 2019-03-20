@@ -39,10 +39,7 @@
 
 	if(gallery.length > 0) {
 		var figures = Object.values(gallery);
-		figures.forEach(function (el) {
-			var src = el.dataset.src;
-			el.style.backgroundImage = "url(" + src + ")";
-		});
+		figures.forEach(lazyload);
 	}
 
 	var about = document.querySelector('.has-circle');
@@ -52,6 +49,19 @@
 		var diameter = Math.sqrt((dimension.width * dimension.width) + (dimension.height * dimension.height));
 		target.style.width = diameter + "px";
 		target.style.height = diameter + "px";
+	}
+
+	function lazyload(el) {
+		var src = el.dataset.src;
+		var img = document.createElement('img');
+		img.src = src;
+		img.onload = function (e) {		
+			setTimeout(function () {
+				el.style.backgroundImage = "url(" + src + ")";
+				el.classList.add("has-loaded");
+			},200);
+		};
+
 	}
 
 }());

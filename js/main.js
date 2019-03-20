@@ -32,10 +32,7 @@ if(quotes) quotes.show()
 
 if(gallery.length > 0) {
 	const figures = Object.values(gallery)
-	figures.forEach(el => {
-		let src = el.dataset.src
-		el.style.backgroundImage = `url(${src})`
-	})
+	figures.forEach(lazyload)
 }
 
 const about = document.querySelector('.has-circle')
@@ -45,4 +42,17 @@ if(about !== null) {
 	const diameter = Math.sqrt((dimension.width * dimension.width) + (dimension.height * dimension.height))
 	target.style.width = `${diameter}px`
 	target.style.height = `${diameter}px`
+}
+
+function lazyload(el) {
+	let src = el.dataset.src
+	let img = document.createElement('img')
+	img.src = src
+	img.onload = (e) => {		
+		setTimeout(() => {
+			el.style.backgroundImage = `url(${src})`
+			el.classList.add("has-loaded")
+		},200)
+	}
+
 }

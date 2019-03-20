@@ -10,8 +10,33 @@
       padding-top calc((752 / 414) * 100vw)
       width 100%
       &:nth-child(3n+2)
-        margin 0 1em !important
-    .img-background      
+        margin 0 1em !important    
+    &:before
+      position absolute
+      content '🎠'
+      width 100%
+      height 100%
+      top 0
+      left 0
+      display flex
+      font-size 5em
+      justify-content center
+      align-items center
+    &:after
+      position absolute
+      content ''
+      width 6em
+      height 6em
+      border .25em solid gold
+      border-radius 50%
+      top 50%
+      left 50%
+      transform translate(-50%,-50%)
+      display flex
+      justify-content center
+      align-items center
+      z-index -1
+    .img-background
       position absolute
       top 0
       left 0      
@@ -20,6 +45,11 @@
       background-size cover
       background-position center
       background-repeat no-repeat
+      transition opacity .5s
+      opacity 0
+      &.has-loaded
+        opacity 1
     &:nth-child(3n+2)
       margin 0
+    
       
