@@ -1,11 +1,11 @@
 mixin quote(quote, whom, client)
   .quote-child
     .child-head
-      h1= quote
+      h3= quote
     .child-foot
-      h3= whom
+      h4= whom
       if client
-        h4= client
+        h5= client
 
 .element-carosel
   .el-head
